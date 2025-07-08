@@ -1,60 +1,11 @@
-// Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Elementos do DOM
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const header = document.querySelector('.header');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    // Toggle do menu móvel
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-    }
-    
-    // Fechar menu ao clicar em um link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        });
-    });
-    
-    // Header com scroll
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-    
-    // Smooth scroll para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Animação de entrada dos elementos
+    // Configurações do observador
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
     
+    // Observador para animações de entrada
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -65,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Elementos para animar
-    const animateElements = document.querySelectorAll('.section-header, .about-content, .timeline-item, .achievement-card, .streaming-content, .social-card');
+    const animateElements = document.querySelectorAll('.section-header, .about-content, .timeline-item, .achievement-card, .streaming-content, .social-card, .stat');
     animateElements.forEach(el => {
         observer.observe(el);
     });
@@ -114,29 +65,37 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
-        const heroBg = document.querySelector('.hero-bg');
+        const heroShapes = document.querySelector('.hero-shapes');
         
-        if (hero && heroBg) {
-            const rate = scrolled * -0.5;
-            heroBg.style.transform = `translateY(${rate}px)`;
+        if (hero && heroShapes) {
+            const rate = scrolled * -0.3;
+            heroShapes.style.transform = `translateY(${rate}px)`;
         }
     });
     
     // Hover effects para cards
-    const cards = document.querySelectorAll('.achievement-card, .social-card, .timeline-content');
+    const cards = document.querySelectorAll('.achievement-card, .social-card, .timeline-content, .stat');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.zIndex = '10';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+            this.style.zIndex = '1';
         });
     });
     
     // Loading animation
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
+        
+        // Remover preloader se existir
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
     });
     
     // Typing effect para o título principal
@@ -179,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             position: absolute;
             width: 4px;
             height: 4px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(229, 9, 20, 0.3);
             border-radius: 50%;
             pointer-events: none;
             animation: float-particle 8s linear infinite;
@@ -202,14 +161,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Criar partículas periodicamente
-    setInterval(createParticle, 2000);
+    setInterval(createParticle, 3000);
     
     // Adicionar CSS para animação de partículas
     const style = document.createElement('style');
     style.textContent = `
         @keyframes float-particle {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                transform: translateY(100vh) scale(0);
                 opacity: 0;
             }
             10% {
@@ -219,127 +178,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(-100px) scale(1);
                 opacity: 0;
             }
         }
         
-        .header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-menu.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        body.loaded {
-            opacity: 1;
-        }
-        
-        body {
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .floating-particle {
+            z-index: 1;
         }
     `;
     document.head.appendChild(style);
     
-    // Efeito de cursor personalizado para links
-    const links = document.querySelectorAll('a, button');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.cursor = 'pointer';
+    // Navegação suave para links internos
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
     
-    // Preloader simples
-    const preloader = document.createElement('div');
-    preloader.className = 'preloader';
-    preloader.innerHTML = `
-        <div class="preloader-content">
-            <div class="preloader-spinner"></div>
-            <p>Carregando...</p>
-        </div>
-    `;
-    preloader.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #0066cc, #00cc66);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease;
-    `;
+    // Menu mobile toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
     
-    const preloaderContent = preloader.querySelector('.preloader-content');
-    preloaderContent.style.cssText = `
-        text-align: center;
-        color: white;
-    `;
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
     
-    const preloaderSpinner = preloader.querySelector('.preloader-spinner');
-    preloaderSpinner.style.cssText = `
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-top: 3px solid white;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 1rem;
-    `;
-    
-    const spinStyle = document.createElement('style');
-    spinStyle.textContent = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(spinStyle);
-    
-    document.body.appendChild(preloader);
-    
-    // Remover preloader após carregamento
-    window.addEventListener('load', function() {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                if (preloader.parentNode) {
-                    preloader.parentNode.removeChild(preloader);
-                }
-            }, 500);
-        }, 1000);
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        });
     });
     
     // Efeito de destaque para seção ativa no menu
     function highlightActiveSection() {
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-menu a');
+        const navLinks = document.querySelectorAll('.nav a');
         
         let current = '';
         sections.forEach(section => {
@@ -363,11 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicionar estilo para link ativo
     const activeLinkStyle = document.createElement('style');
     activeLinkStyle.textContent = `
-        .nav-menu a.active {
-            color: var(--primary-blue) !important;
+        .nav a.active {
+            color: var(--primary-red) !important;
         }
         
-        .nav-menu a.active::after {
+        .nav a.active::after {
             width: 100% !important;
         }
     `;
@@ -385,9 +281,191 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Console log personalizado
-    console.log('%c🎮 Sacy Rossi - Site Oficial', 'color: #0066cc; font-size: 20px; font-weight: bold;');
-    console.log('%cEx Pro Player & Streamer Oficial MIBR', 'color: #00cc66; font-size: 14px;');
-    console.log('%cCampeão do Masters 2022 de Valorant', 'color: #ffcc00; font-size: 12px;');
+    // Animação de scroll para timeline
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateX(0)';
+                timelineObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
     
+    timelineItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        timelineObserver.observe(item);
+    });
+    
+    // Efeito de destaque para achievement cards
+    const achievementCards = document.querySelectorAll('.achievement-card');
+    achievementCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.achievement-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.achievement-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+    
+    // Animação de entrada para social links
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(20px)';
+        link.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        setTimeout(() => {
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+    
+    // Efeito de pulse para o banner campeão
+    const championBanner = document.querySelector('.champion-banner');
+    if (championBanner) {
+        setInterval(() => {
+            championBanner.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                championBanner.style.transform = 'scale(1)';
+            }, 200);
+        }, 3000);
+    }
+    
+    // Console log personalizado
+    console.log('%c🎮 Sacy Rossi - Site Oficial', 'color: #e50914; font-size: 20px; font-weight: bold;');
+    console.log('%cEx Pro Player & Streamer Oficial MIBR', 'color: #fff; font-size: 14px;');
+    console.log('%cCampeão do Masters 2022 de Valorant', 'color: #e50914; font-size: 12px;');
+    
+    // Preloader (se necessário)
+    function createPreloader() {
+        const preloader = document.createElement('div');
+        preloader.className = 'preloader';
+        preloader.innerHTML = `
+            <div class="preloader-content">
+                <div class="preloader-logo">SACY ROSSI</div>
+                <div class="preloader-spinner"></div>
+            </div>
+        `;
+        
+        const preloaderStyle = document.createElement('style');
+        preloaderStyle.textContent = `
+            .preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--accent-black);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                transition: opacity 0.5s ease;
+            }
+            
+            .preloader-content {
+                text-align: center;
+            }
+            
+            .preloader-logo {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 2rem;
+                font-weight: 900;
+                color: var(--primary-red);
+                margin-bottom: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .preloader-spinner {
+                width: 50px;
+                height: 50px;
+                border: 3px solid var(--accent-gray);
+                border-top: 3px solid var(--primary-red);
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 0 auto;
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        
+        document.head.appendChild(preloaderStyle);
+        document.body.appendChild(preloader);
+        
+        // Remover preloader após carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.remove();
+                }, 500);
+            }, 1000);
+        });
+    }
+    
+    // Criar preloader apenas se a página ainda não carregou
+    if (document.readyState !== 'complete') {
+        createPreloader();
+    }
+    
+    // Smooth scroll para o topo
+    function createScrollToTop() {
+        const scrollButton = document.createElement('button');
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollButton.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            color: var(--text-white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 1.2rem;
+        `;
+        
+        document.body.appendChild(scrollButton);
+        
+        // Mostrar/ocultar botão baseado no scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollButton.style.opacity = '1';
+                scrollButton.style.visibility = 'visible';
+            } else {
+                scrollButton.style.opacity = '0';
+                scrollButton.style.visibility = 'hidden';
+            }
+        });
+        
+        // Scroll para o topo
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    createScrollToTop();
 }); 
