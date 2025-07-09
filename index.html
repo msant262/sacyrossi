@@ -6,70 +6,130 @@
     <title>Sacy Rossi - Ex-Pro Player & Streamer Oficial MIBR</title>
     <meta name="description" content="Sacy Rossi - Campeão do Masters 2022 de Valorant, ex-pro player e streamer oficial da MIBR. Conheça sua trajetória desde o Counter-Strike até se tornar referência no cenário gamer brasileiro.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <!-- Banner Campeão -->
-    <div class="champion-banner">
-        <i class="fas fa-trophy champion-icon"></i>
-        CAMPEÃO DO MASTERS 2022 - VALORANT
+    <!-- Material Design 3 FAB Menu -->
+    <div class="fab-container">
+        <button class="fab fab-main" aria-label="Menu principal">
+            <i class="fas fa-gamepad"></i>
+        </button>
+        <div class="fab-options">
+            <button class="fab fab-option" data-tooltip="Twitch" aria-label="Twitch">
+                <i class="fab fa-twitch"></i>
+            </button>
+            <button class="fab fab-option" data-tooltip="YouTube" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </button>
+            <button class="fab fab-option" data-tooltip="Instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </button>
+            <button class="fab fab-option" data-tooltip="Kick" aria-label="Kick">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header com Material Design 3 -->
     <header class="header">
-        <div class="container">
-            <div class="logo">SACY<span>ROSSI</span></div>
-            <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#carreira">Carreira</a>
-                <a href="#conquistas">Conquistas</a>
-                <a href="#streaming">Streaming</a>
-                <a href="#redes">Redes</a>
-            </nav>
+        <div class="header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-primary">SACY</span>
+                        <span class="logo-secondary">ROSSI</span>
+                    </div>
+                </div>
+                
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#sobre" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Sobre</span>
+                    </a>
+                    <a href="#carreira" class="nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Carreira</span>
+                    </a>
+                    <a href="#streaming" class="nav-link">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <span>Streaming</span>
+                    </a>
+                    <a href="#redes" class="nav-link">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Redes</span>
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Menu mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section com Material Design 3 -->
         <section id="home" class="hero">
-            <div class="hero-shapes">
-                <div class="shape shape-blue"></div>
-                <div class="shape shape-green"></div>
-                <div class="shape shape-yellow"></div>
+            <div class="hero-background">
+                <div class="hero-shapes">
+                    <div class="shape shape-primary"></div>
+                    <div class="shape shape-secondary"></div>
+                    <div class="shape shape-tertiary"></div>
+                </div>
             </div>
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="gradient-text">SACY ROSSI</span>
-                    </h1>
-                    <h2 class="hero-subtitle">Ex-Pro Player & Streamer Oficial MIBR</h2>
-                    <p class="hero-desc">
-                        Campeão mundial de Valorant, referência no cenário gamer brasileiro.<br>
-                        Sua jornada começou no Counter-Strike aos 11 anos e evoluiu até se tornar<br>
-                        o primeiro atleta campeão de Masters e Champions no Valorant.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#conquistas" class="btn btn-primary">
-                            <i class="fas fa-trophy"></i>
-                            Ver Conquistas
-                        </a>
-                        <a href="#streaming" class="btn btn-secondary">
-                            <i class="fas fa-play"></i>
-                            Assistir Live
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-badges" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                            <span class="hero-badge"><i class="fas fa-trophy"></i> Campeão Champions 2022</span>
+                            <span class="hero-badge"><i class="fas fa-trophy"></i> Campeão Masters 2024</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            <span class="title-line">SACY</span>
+                            <span class="title-line">ROSSI</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle">
+                            Ex-Pro Player & Streamer Oficial MIBR
+                        </p>
+                        
+                        <p class="hero-description">
+                            Campeão mundial de Valorant, referência no cenário gamer brasileiro. 
+                            Sua jornada começou no Counter-Strike aos 11 anos e evoluiu até se tornar 
+                            o primeiro atleta campeão de Masters e Champions no Valorant.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="https://www.twitch.tv/sacy" class="btn btn-twitch" target="_blank">
+                                <i class="fab fa-twitch"></i>
+                                <span>Twitch</span>
+                            </a>
+                            <a href="https://www.youtube.com/@Sacyadc" class="btn btn-youtube" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                        <a href="https://pixgg.com/sacy" class="btn btn-donate" target="_blank">
+                            <i class="fas fa-heart"></i> Donate
                         </a>
                     </div>
-                </div>
-                <div class="hero-card">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="mibr-badge">
-                            <i class="fas fa-star"></i>
-                            Streamer Oficial MIBR
-                        </div>
-                        <h3>Gustavo Rossi</h3>
-                        <p>Conhecido como "Sacy", é um dos jogadores mais respeitados do cenário brasileiro. Sua trajetória inspira milhares de gamers ao redor do mundo.</p>
+                    
+                    <div class="hero-visual">
+                        <img src="assets/sacy2.jpg" alt="Sacy Rossi" class="hero-photo" />
                     </div>
                 </div>
             </div>
@@ -85,42 +145,35 @@
                 
                 <div class="about-content">
                     <div class="about-text">
-                        <p>
-                            Gustavo Rossi, conhecido como "Sacy", é um dos nomes mais importantes do cenário brasileiro de eSports. 
-                            Sua história começou aos 11 anos no Counter-Strike, onde desenvolveu as bases que o tornariam um jogador 
-                            excepcional.
-                        </p>
-                        <p>
-                            A transição para o League of Legends em 2015 marcou o início de uma carreira profissional sólida, 
-                            mas foi no Valorant que Sacy encontrou seu verdadeiro potencial. Como parte da Sentinels, 
-                            conquistou o título mais importante da modalidade: o Masters 2022.
-                        </p>
-                        <p>
-                            Hoje, como streamer oficial da MIBR, Sacy continua inspirando a nova geração de gamers, 
-                            compartilhando conhecimento e mantendo viva a paixão pelos eSports.
-                        </p>
-                        
-                        <div class="about-stats">
-                            <div class="stat">
-                                <h3>11</h3>
-                                <p>Anos de Experiência</p>
-                            </div>
-                            <div class="stat">
-                                <h3>3</h3>
-                                <p>Jogos Profissionais</p>
-                            </div>
-                            <div class="stat">
-                                <h3>1</h3>
-                                <p>Campeonato Mundial</p>
-                            </div>
+                        <div class="text-card">
+                            <p>
+                                Gustavo "Sacy" Rossi iniciou sua trajetória nos eSports ainda criança, jogando Counter-Strike em lan houses e campeonatos amadores. Sua paixão pela competição e pelo universo gamer começou cedo, moldando sua mentalidade vencedora.
+                            </p>
+                        </div>
+                        <div class="text-card">
+                            <p>
+                                Em 2015, Sacy migrou para o League of Legends, onde se tornou pro player e defendeu grandes equipes como INTZ e RED Canids. No LoL, conquistou títulos nacionais e se consolidou como um dos principais nomes do cenário brasileiro.
+                            </p>
+                        </div>
+                        <div class="text-card">
+                            <p>
+                                Com a chegada do Valorant em 2020, Sacy abraçou o novo desafio e rapidamente se destacou. Fez história com a LOUD, conquistando o título mundial do Champions em 2022, e depois se tornou campeão do Masters em 2024 pela Sentinels. Atualmente, Sacy é o único jogador brasileiro a conquistar dois títulos internacionais na modalidade.
+                            </p>
+                        </div>
+                        <div class="text-card">
+                            <p>
+                                Em 2024, Sacy anunciou sua aposentadoria do competitivo e passou a se dedicar à criação de conteúdo e ao streaming, tornando-se streamer oficial da MIBR. Hoje, inspira e orienta a nova geração de gamers, compartilhando sua experiência e paixão pelos eSports.
+                            </p>
                         </div>
                     </div>
-                    
-                    <div class="about-image">
-                        <div class="image-container">
-                            <div class="image-bg"></div>
-                            <div class="valorant-logo">
+                    <div class="about-visual">
+                        <div class="visual-card">
+                            <div class="card-icon">
                                 <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Valorant</h3>
+                                <p>Único brasileiro campeão mundial (Champions 2022 - LOUD) e campeão internacional (Masters 2024 - Sentinels)</p>
                             </div>
                         </div>
                     </div>
@@ -133,174 +186,114 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Trajetória Profissional</h2>
-                    <p class="section-subtitle">Uma linha do tempo de conquistas e evolução constante</p>
+                    <p class="section-subtitle">Uma linha do tempo animada de conquistas e evolução constante</p>
                 </div>
-                
-                <div class="career-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2004-2014</div>
-                            <h3>Início no Counter-Strike</h3>
-                            <p>Aos 11 anos, Sacy começou sua jornada no Counter-Strike, desenvolvendo habilidades fundamentais que seriam essenciais para sua carreira futura.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-gamepad"></i>
-                                Primeiro Contato com eSports
+                <div class="career-timeline-animated">
+                    <!-- Card 1 -->
+                    <div class="timeline-card" data-phase="cs">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-gamepad"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2004-2014</span>
+                                <h3>Início no Counter-Strike</h3>
+                            </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="timeline-card-body">
+                            <p>Sacy começou sua trajetória nos eSports jogando Counter-Strike em lan houses e campeonatos amadores, desenvolvendo as bases competitivas que levaria para toda a carreira.</p>
+                            <div class="timeline-badges">
+                                <span class="badge"><i class="fas fa-gamepad"></i> Primeiros passos nos eSports</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2015-2019</div>
-                            <h3>Era League of Legends</h3>
-                            <p>Transição para o LoL marcou o início da carreira profissional. Desenvolveu habilidades estratégicas e trabalho em equipe que seriam cruciais no Valorant.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-users"></i>
-                                Trabalho em Equipe
+                    <!-- Card 2 -->
+                    <div class="timeline-card" data-phase="lol">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-dragon"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2015-2019</span>
+                                <h3>League of Legends - INTZ & RED Canids</h3>
+                            </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="timeline-card-body">
+                            <p>Em 2015, Sacy tornou-se pro player de LoL, defendendo INTZ e RED Canids. Conquistou títulos nacionais e se consolidou como um dos principais nomes do cenário brasileiro.</p>
+                            <div class="timeline-badges">
+                                <span class="badge"><i class="fas fa-trophy"></i> Campeão CBLOL</span>
+                                <span class="badge"><i class="fas fa-users"></i> INTZ & RED Canids</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2020</div>
-                            <h3>Chegada ao Valorant</h3>
-                            <p>Com o lançamento do Valorant, Sacy viu a oportunidade perfeita para aplicar toda sua experiência. A combinação de habilidades de FPS e estratégia era ideal.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-rocket"></i>
-                                Nova Era
+                    <!-- Card 3 -->
+                    <div class="timeline-card" data-phase="valorant">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2020-2021</span>
+                                <h3>Team Vikings & Ascensão no Valorant</h3>
+                            </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="timeline-card-body">
+                            <p>Com a chegada do Valorant, Sacy liderou a Team Vikings em conquistas históricas, tornando-se referência nacional e abrindo portas para o cenário internacional.</p>
+                            <div class="timeline-badges">
+                                <span class="badge"><i class="fas fa-flag"></i> Team Vikings</span>
+                                <span class="badge"><i class="fas fa-trophy"></i> Títulos Nacionais</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2021-2022</div>
-                            <h3>Era Sentinels - Domínio Absoluto</h3>
-                            <p>Como parte da Sentinels, Sacy ajudou a estabelecer o padrão de excelência no Valorant. A equipe se tornou referência mundial na modalidade.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-crown"></i>
-                                Referência Mundial
+                    <!-- Card 4 -->
+                    <div class="timeline-card" data-phase="champions">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-crown"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2022</span>
+                                <h3>Campeão Mundial - LOUD</h3>
+                            </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="timeline-card-body">
+                            <p>Em 2022, Sacy fez história ao conquistar o título mundial do Valorant Champions com a LOUD, tornando-se o primeiro brasileiro campeão mundial da modalidade.</p>
+                            <div class="timeline-badges">
+                                <span class="badge badge-trophy"><i class="fas fa-trophy"></i> Campeão Champions 2022</span>
+                                <span class="badge"><i class="fas fa-users"></i> LOUD</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022</div>
-                            <h3>Campeão do Masters - Conquista Histórica</h3>
-                            <p>O ápice da carreira: conquista do Masters 2022. Sacy se tornou o primeiro atleta campeão de Masters e Champions no Valorant, marcando história no esporte.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-trophy"></i>
-                                Campeão Mundial
+                    <!-- Card 5 -->
+                    <div class="timeline-card" data-phase="masters">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2024</span>
+                                <h3>Campeão Masters - Sentinels</h3>
+                            </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="timeline-card-body">
+                            <p>Em 2024, Sacy conquistou o título do Masters pela Sentinels, tornando-se o único brasileiro bicampeão internacional de Valorant.</p>
+                            <div class="timeline-badges">
+                                <span class="badge badge-trophy"><i class="fas fa-trophy"></i> Campeão Masters 2024</span>
+                                <span class="badge"><i class="fas fa-users"></i> Sentinels</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2023-Presente</div>
-                            <h3>Streamer Oficial MIBR</h3>
-                            <p>Nova fase como streamer oficial da MIBR, uma das organizações mais tradicionais do Brasil. Sacy continua inspirando e educando a comunidade gamer.</p>
-                            <div class="achievement-badge">
-                                <i class="fas fa-broadcast-tower"></i>
-                                Streamer Oficial
+                    <!-- Card 6 -->
+                    <div class="timeline-card" data-phase="streamer">
+                        <div class="timeline-card-header">
+                            <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div class="timeline-info">
+                                <span class="timeline-date">2024 - Atual</span>
+                                <h3>Streamer & Mentor - MIBR</h3>
                             </div>
+                            <button class="timeline-toggle" aria-label="Expandir detalhes"><i class="fas fa-chevron-down"></i></button>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Conquistas Section -->
-        <section id="conquistas" class="achievements">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Principais Conquistas</h2>
-                    <p class="section-subtitle">Títulos e reconhecimentos que marcaram uma carreira excepcional</p>
-                </div>
-                
-                <div class="banner-highlight">
-                    <i class="fas fa-star"></i>
-                    PRIMEIRO ATLETA CAMPEÃO DE MASTERS E CHAMPIONS NO VALORANT
-                </div>
-                
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Masters 2022</h3>
-                        <p>Campeonato mundial mais importante do Valorant, consolidando Sacy como um dos melhores jogadores do mundo.</p>
-                        <div class="achievement-details">
-                            <span>Campeão Mundial</span>
-                            <span>Sentinel</span>
-                            <span>2022</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <h3>VCT Champions</h3>
-                        <p>Participação no torneio mais prestigiado do circuito VCT, demonstrando consistência no mais alto nível.</p>
-                        <div class="achievement-details">
-                            <span>Elite Mundial</span>
-                            <span>Competição</span>
-                            <span>2022</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <h3>Múltiplos Títulos Nacionais</h3>
-                        <p>Domínio absoluto no cenário brasileiro, conquistando diversos títulos e estabelecendo padrões de excelência.</p>
-                        <div class="achievement-details">
-                            <span>Domínio Nacional</span>
-                            <span>Múltiplos Títulos</span>
-                            <span>2020-2022</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Streamer Oficial MIBR</h3>
-                        <p>Parceria com uma das organizações mais tradicionais do Brasil, reconhecendo seu impacto no cenário gamer.</p>
-                        <div class="achievement-details">
-                            <span>MIBR</span>
-                            <span>Streamer Oficial</span>
-                            <span>2023</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Referência da Comunidade</h3>
-                        <p>Inspiração para milhares de gamers brasileiros, sendo reconhecido como uma das principais referências do cenário.</p>
-                        <div class="achievement-details">
-                            <span>Influência</span>
-                            <span>Comunidade</span>
-                            <span>Ongoing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h3>Transição Multi-Jogo</h3>
-                        <p>Sucesso em três jogos diferentes (CS, LoL, Valorant), demonstrando versatilidade e adaptabilidade excepcionais.</p>
-                        <div class="achievement-details">
-                            <span>Versatilidade</span>
-                            <span>3 Jogos</span>
-                            <span>2004-2023</span>
+                        <div class="timeline-card-body">
+                            <p>Após se aposentar do competitivo, Sacy tornou-se streamer oficial da MIBR e referência para a nova geração de gamers, compartilhando conhecimento e inspirando a comunidade.</p>
+                            <div class="timeline-badges">
+                                <span class="badge badge-professor"><i class="fas fa-chalkboard-teacher"></i> Mentor & Criador de Conteúdo</span>
+                                <span class="badge"><i class="fas fa-video"></i> Streamer Oficial MIBR</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -311,102 +304,383 @@
         <section id="streaming" class="streaming">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Streaming & MIBR</h2>
-                    <p class="section-subtitle">Conectando com a comunidade como streamer oficial da MIBR</p>
+                    <h2 class="section-title">Streaming & Conteúdo</h2>
+                    <p class="section-subtitle">Conecte-se com Sacy em suas plataformas favoritas</p>
                 </div>
                 
                 <div class="streaming-content">
-                    <div class="streaming-info">
-                        <div class="mibr-highlight">
-                            <div class="mibr-logo">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h3>Streamer Oficial MIBR</h3>
-                            <p>
-                                Como streamer oficial da MIBR, uma das organizações mais tradicionais e respeitadas do Brasil, 
-                                Sacy representa a excelência e dedicação que caracterizam a marca. Sua experiência como pro player 
-                                e campeão mundial traz um valor único para a comunidade.
-                            </p>
-                        </div>
-                        
-                        <div class="streaming-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-users"></i>
-                                <div>
-                                    <h4>Comunidade Ativa</h4>
-                                    <p>Milhares de seguidores</p>
+                    <div class="mibr-highlight">
+                        <div class="highlight-card">
+                            <div class="card-header">
+                                <div class="mibr-logo">
+                                    <i class="fas fa-star"></i>
                                 </div>
+                                <h3>Streamer Oficial MIBR</h3>
                             </div>
-                            <div class="stat-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h4>Horários Regulares</h4>
-                                    <p>Streams frequentes</p>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>
-                                    <h4>Conteúdo Educativo</h4>
-                                    <p>Dicas e estratégias</p>
-                                </div>
-                            </div>
+                            <p>Como streamer oficial da MIBR, Sacy representa uma das maiores organizações de eSports do Brasil, compartilhando conhecimento e entretenimento com sua comunidade.</p>
                         </div>
                     </div>
                     
-                    <div class="streaming-links">
-                        <h3>Assista Agora</h3>
-                        <div class="social-links">
-                            <a href="https://www.twitch.tv/sacy" target="_blank" class="social-link twitch">
+                    <div class="platforms-grid">
+                        <a href="https://www.twitch.tv/sacy" class="platform-card twitch" target="_blank">
+                            <div class="platform-icon">
                                 <i class="fab fa-twitch"></i>
-                                <span>Twitch</span>
-                            </a>
-                            <a href="https://kick.com/sacy" target="_blank" class="social-link kick">
+                            </div>
+                            <div class="platform-info">
+                                <h3>Twitch</h3>
+                                <p>Lives diárias de Valorant e interação com a comunidade</p>
+                            </div>
+                            <div class="platform-action">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="https://kick.com/sacy" class="platform-card kick" target="_blank">
+                            <div class="platform-icon">
                                 <i class="fas fa-play"></i>
-                                <span>Kick</span>
-                            </a>
-                            <a href="https://www.youtube.com/@Sacyadc" target="_blank" class="social-link youtube">
+                            </div>
+                            <div class="platform-info">
+                                <h3>Kick</h3>
+                                <p>Conteúdo exclusivo e streams especiais</p>
+                            </div>
+                            <div class="platform-action">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.youtube.com/@Sacyadc" class="platform-card youtube" target="_blank">
+                            <div class="platform-icon">
                                 <i class="fab fa-youtube"></i>
-                                <span>YouTube</span>
-                            </a>
-                        </div>
+                            </div>
+                            <div class="platform-info">
+                                <h3>YouTube</h3>
+                                <p>Vídeos de gameplay, dicas e momentos épicos</p>
+                            </div>
+                            <div class="platform-action">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Redes Sociais Section -->
-        <section id="redes" class="contact">
+        <section id="redes" class="social">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Redes Sociais</h2>
-                    <p class="section-subtitle">Conecte-se com Sacy em todas as plataformas</p>
+                    <p class="section-subtitle">Acompanhe Sacy em todas as suas redes</p>
                 </div>
                 
                 <div class="social-grid">
-                    <a href="https://x.com/gustavosacy" target="_blank" class="social-card twitter">
-                        <i class="fab fa-twitter"></i>
-                        <h3>Twitter</h3>
-                        <p>@gustavosacy</p>
+                    <a href="https://x.com/gustavosacy" class="social-card twitter" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3>Twitter/X</h3>
+                            <p>Atualizações e interação direta</p>
+                        </div>
                     </a>
                     
-                    <a href="https://www.instagram.com/sacyrossi/" target="_blank" class="social-card instagram">
-                        <i class="fab fa-instagram"></i>
-                        <h3>Instagram</h3>
-                        <p>@sacyrossi</p>
+                    <a href="https://www.instagram.com/sacyrossi/" class="social-card instagram" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3>Instagram</h3>
+                            <p>Fotos e stories do dia a dia</p>
+                        </div>
                     </a>
                     
-                    <a href="https://www.tiktok.com/@sacyrossi" target="_blank" class="social-card tiktok">
-                        <i class="fab fa-tiktok"></i>
-                        <h3>TikTok</h3>
-                        <p>@sacyrossi</p>
+                    <a href="https://www.tiktok.com/@sacyrossi" class="social-card tiktok" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3>TikTok</h3>
+                            <p>Vídeos curtos e momentos divertidos</p>
+                        </div>
                     </a>
                     
-                    <a href="https://linktr.ee/sacy" target="_blank" class="social-card linktree">
-                        <i class="fas fa-link"></i>
-                        <h3>Linktree</h3>
-                        <p>Todos os Links</p>
+                    <a href="https://linktr.ee/sacy" class="social-card linktree" target="_blank">
+                        <div class="social-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3>Linktree</h3>
+                            <p>Todos os links em um só lugar</p>
+                        </div>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estatísticas e Números -->
+        <section id="estatisticas" class="stats">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Estatísticas e Números</h2>
+                    <p class="section-subtitle">Números que mostram o impacto de Sacy no cenário gamer</p>
+                </div>
+                <div class="stats-grid stats-grid-custom">
+                    <div class="stat-card stat-card-youtube">
+                        <h3><i class="fab fa-youtube"></i> YouTube</h3>
+                        <div class="stat-row">
+                            <div>
+                                <div class="stat-value">200K+</div>
+                                <div class="stat-label">Inscritos</div>
+                            </div>
+                            <div>
+                                <div class="stat-value">700+</div>
+                                <div class="stat-label">Vídeos</div>
+                            </div>
+                            <div>
+                                <div class="stat-value">25M+</div>
+                                <div class="stat-label">Visualizações</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-grid stats-grid-row">
+                    <div class="stat-card">
+                        <h3><i class="fab fa-twitch"></i> Twitch</h3>
+                        <div class="stat-value">800K+</div>
+                        <div class="stat-label">Seguidores</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3><i class="fab fa-instagram"></i> Instagram</h3>
+                        <div class="stat-value">250K+</div>
+                        <div class="stat-label">Seguidores</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3><i class="fab fa-twitter"></i> Twitter/X</h3>
+                        <div class="stat-value">400K+</div>
+                        <div class="stat-label">Seguidores</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracker Section -->
+        <section id="tracker" class="tracker">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tracker Valorant</h2>
+                    <p class="section-subtitle">Estatísticas competitivas do Sacy no Valorant</p>
+                </div>
+                
+                <div class="tracker-content">
+                    <!-- Estatísticas Principais -->
+                    <div class="tracker-main-stats">
+                        <div class="tracker-stat">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <div class="stat-value">Radiant</div>
+                                <div class="stat-label">Rank Atual</div>
+                            </div>
+                        </div>
+                        <div class="tracker-stat">
+                            <div class="stat-icon">⚔️</div>
+                            <div class="stat-info">
+                                <div class="stat-value">1.18</div>
+                                <div class="stat-label">K/D Ratio</div>
+                            </div>
+                        </div>
+                        <div class="tracker-stat">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-info">
+                                <div class="stat-value">54%</div>
+                                <div class="stat-label">Win Rate</div>
+                            </div>
+                        </div>
+                        <div class="tracker-stat">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-info">
+                                <div class="stat-value">37%</div>
+                                <div class="stat-label">Headshot %</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Agents -->
+                    <div class="tracker-agents">
+                        <h3>Top Agents</h3>
+                        <div class="agents-grid">
+                            <div class="agent-card">
+                                <div class="agent-header">
+                                    <div class="agent-rank">1</div>
+                                    <div class="agent-avatar">
+                                        <img src="assets/Sova.webp" alt="Sova" />
+                                    </div>
+                                    <div class="agent-name">Sova</div>
+                                </div>
+                                <div class="agent-stats">
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Win Rate</span>
+                                        <span class="stat-value">52.4%</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Partidas</span>
+                                        <span class="stat-value">21</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Melhor Mapa</span>
+                                        <span class="stat-value">Ascent</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="agent-card">
+                                <div class="agent-header">
+                                    <div class="agent-rank">2</div>
+                                    <div class="agent-avatar">
+                                        <img src="assets/Iso.webp" alt="Iso" />
+                                    </div>
+                                    <div class="agent-name">Iso</div>
+                                </div>
+                                <div class="agent-stats">
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Win Rate</span>
+                                        <span class="stat-value">75%</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Partidas</span>
+                                        <span class="stat-value">16</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Melhor Mapa</span>
+                                        <span class="stat-value">Ascent</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="agent-card">
+                                <div class="agent-header">
+                                    <div class="agent-rank">3</div>
+                                    <div class="agent-avatar">
+                                        <img src="assets/Fade.webp" alt="Fade" />
+                                    </div>
+                                    <div class="agent-name">Fade</div>
+                                </div>
+                                <div class="agent-stats">
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Win Rate</span>
+                                        <span class="stat-value">57.1%</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Partidas</span>
+                                        <span class="stat-value">14</span>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <span class="stat-label">Melhor Mapa</span>
+                                        <span class="stat-value">Bind</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas Detalhadas -->
+                    <div class="tracker-detailed">
+                        <h3>Estatísticas Detalhadas</h3>
+                        <div class="detailed-grid">
+                            <div class="detail-item">
+                                <div class="detail-value">162</div>
+                                <div class="detail-label">Damage/Round</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value">1.18</div>
+                                <div class="detail-label">K/D Ratio</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value">77%</div>
+                                <div class="detail-label">KAST</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value">237</div>
+                                <div class="detail-label">ACS</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tracker-link">
+                        <a href="https://tracker.gg/valorant/profile/riot/MIBR%20Sacy%23EGO/overview?platform=pc&playlist=competitive&season=ac12e9b3-47e6-9599-8fa1-0bb473e5efc7" target="_blank" class="btn btn-primary">
+                            Ver perfil completo no Tracker.gg
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos e Mídia -->
+        <section id="midia" class="media">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Depoimentos e Mídia</h2>
+                    <p class="section-subtitle">O que a mídia e a comunidade dizem sobre Sacy</p>
+                </div>
+                <div class="media-grid">
+                    <div class="media-card">
+                        <blockquote>“Sacy se tornou o primeiro atleta campeão de Masters e Champions no Valorant, marcando história no esporte.”</blockquote>
+                        <span class="media-source">ValorantZone</span>
+                    </div>
+                    <div class="media-card">
+                        <blockquote>“Referência para milhares de gamers, Sacy inspira a nova geração com sua trajetória e dedicação.”</blockquote>
+                        <span class="media-source">Liquipedia</span>
+                    </div>
+                    <div class="media-card">
+                        <blockquote>“Sacy, ex-jogador de LoL, começou no Counter-Strike com 11 anos e hoje é campeão mundial de Valorant.”</blockquote>
+                        <span class="media-source">TechTudo</span>
+                    </div>
+                    <div class="media-card">
+                        <blockquote>“A trajetória de Sacy é marcada por superação, conquistas e uma paixão inabalável pelos eSports.”</blockquote>
+                        <span class="media-source">Pichau Arena</span>
+                    </div>
+                    <div class="media-card">
+                        <blockquote>“Sacy é considerado um dos jogadores mais completos do cenário internacional de Valorant.”</blockquote>
+                        <span class="media-source">VLR.gg</span>
+                    </div>
+                    <div class="media-card">
+                        <blockquote>“Com uma carreira sólida e títulos importantes, Sacy é inspiração para a comunidade de Valorant.”</blockquote>
+                        <span class="media-source">TheSpike.gg</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Configurações e Setups -->
+        <section id="setup" class="setup">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Configurações e Setup</h2>
+                    <p class="section-subtitle">Descubra os equipamentos e configurações usados por Sacy</p>
+                </div>
+                <div class="setup-columns">
+                    <div class="setup-col">
+                        <h3>Setup</h3>
+                        <ul class="setup-list">
+                            <li><strong>Placa Mãe:</strong> Asus Pro Z790-P</li>
+                            <li><strong>Processador:</strong> Core i5-13600K</li>
+                            <li><strong>RAM:</strong> 32GB TeamGroup T-Force</li>
+                            <li><strong>GPU:</strong> RTX 4070 TI</li>
+                            <li><strong>Fonte:</strong> MSI MAG 850W</li>
+                            <li><strong>Water Cooler:</strong> DeepCool LS720</li>
+                            <li><strong>Gabinete:</strong> Lian Li 011 Dynamic EVO ATX</li>
+                        </ul>
+                    </div>
+                    <div class="setup-col">
+                        <h3>Periféricos</h3>
+                        <ul class="setup-list">
+                            <li><strong>Mouse:</strong> Logitech G Pro X Superlight 2</li>
+                            <li><strong>Teclado:</strong> Wooting 60HE+</li>
+                            <li><strong>Monitor:</strong> BenQ Zowie XL2566K</li>
+                            <li><strong>Headset:</strong> HyperX Cloud II</li>
+                            <li><strong>Mouse Pad:</strong> BenQ Zowie G-SR II</li>
+                            <li><strong>Microfone:</strong> Shure MV7X XLR</li>
+                            <li><strong>Webcam:</strong> Canon EOS Rebel SL3</li>
+                            <li><strong>Cadeira:</strong> Razer Iskur V2</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -416,23 +690,26 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>SACY ROSSI</h3>
-                    <p>Ex-Pro Player & Streamer Oficial MIBR<br>Campeão do Masters 2022 de Valorant</p>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>SACY ROSSI</span>
+                    </div>
+                    <p>Ex-Pro Player & Streamer Oficial MIBR</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-section">
                         <h4>Carreira</h4>
                         <ul>
-                            <li><a href="#carreira">Timeline</a></li>
-                            <li><a href="#conquistas">Conquistas</a></li>
+                            <li><a href="#carreira">Trajetória</a></li>
                             <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#streaming">Streaming</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
-                        <h4>Streaming</h4>
+                        <h4>Redes</h4>
                         <ul>
                             <li><a href="https://www.twitch.tv/sacy" target="_blank">Twitch</a></li>
                             <li><a href="https://kick.com/sacy" target="_blank">Kick</a></li>
@@ -441,9 +718,9 @@
                     </div>
                     
                     <div class="footer-section">
-                        <h4>Redes Sociais</h4>
+                        <h4>Social</h4>
                         <ul>
-                            <li><a href="https://x.com/gustavosacy" target="_blank">Twitter</a></li>
+                            <li><a href="https://x.com/gustavosacy" target="_blank">Twitter/X</a></li>
                             <li><a href="https://www.instagram.com/sacyrossi/" target="_blank">Instagram</a></li>
                             <li><a href="https://www.tiktok.com/@sacyrossi" target="_blank">TikTok</a></li>
                         </ul>
@@ -452,7 +729,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Sacy Rossi. Todos os direitos reservados. | Desenvolvido com ❤️ para o cenário de eSports brasileiro</p>
+                <p>&copy; 2024 Sacy Rossi. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
